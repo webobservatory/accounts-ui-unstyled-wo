@@ -1,10 +1,10 @@
 Package.describe({
-  name: 'devasena:accounts-ui-unstyled-wo',
+  name: 'webobservatory:accounts-ui-unstyled-wo',
   version: '0.0.1',
   // Brief, one-line summary of the package.
   summary: '',
   // URL to the Git repository containing the source code for this package.
-  git: '',
+  git: 'https://github.com/webobservatory/accounts-ui-unstyled-wo',
   // By default, Meteor will default to using README.md for documentation.
   // To avoid submitting documentation, set this field to null.
   documentation: 'README.md'
@@ -55,7 +55,7 @@ Package.onUse(function(api) {
 });
 
 Package.onTest(function(api) {
-  api.use('accounts-ui-unstyled-wo');
+  api.use('webobservatory:accounts-ui-unstyled-wo');
   api.use('tinytest');
   api.addFiles('accounts_ui_tests.js', 'client');
 });
