@@ -15,7 +15,7 @@ Accounts.ui._options = {
 // XXX refactor duplicated code in this function
 
 /**
- * @summary Configure the behavior of [`{{> loginButtons}}`](#accountsui).
+ * @summary Configure the behavior of [`{{> loginButtonsWo}}`](#accountsui).
  * @locus Client
  * @param {Object} options
  * @param {Object} options.requestPermissions Which [permissions](#requestpermissions) to request from the user for each external service.
