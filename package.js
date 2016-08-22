@@ -1,8 +1,8 @@
 Package.describe({
   name: 'webobservatory:accounts-ui-unstyled-wo',
-  version: '0.0.1',
+  version: '0.0.2',
   // Brief, one-line summary of the package.
-  summary: '',
+  summary: 'A version of accounts-ui package without the CSS for web observatory.',
   // URL to the Git repository containing the source code for this package.
   git: 'https://github.com/webobservatory/accounts-ui-unstyled-wo',
   // By default, Meteor will default to using README.md for documentation.
@@ -11,8 +11,8 @@ Package.describe({
 });
 
 Package.onUse(function(api) {
-
-  api.use(['tracker', 'service-configuration', 'accounts-base',
+  api.versionsFrom("METEOR@0.9.0")
+  api.use(['tracker@1.0.13', 'service-configuration', 'accounts-base',
            'underscore', 'templating', 'session', 'jquery'], 'client');
   // Export Accounts (etc) to packages using this one.
   api.imply('accounts-base', ['client', 'server']);
@@ -48,14 +48,14 @@ Package.onUse(function(api) {
   // this package doesn't actually apply these styles; they need to be
   // `@import`ed from some non-import less file.  The accounts-ui package does
   // that for you, or you can do it in your app.
-  api.use('less');
+  api.use('less@2.6.0');
   api.addFiles('login_buttons.import.less');
 
 
 });
 
 Package.onTest(function(api) {
+  api.use(['tinytest', 'test-helpers'], 'client');
   api.use('webobservatory:accounts-ui-unstyled-wo');
-  api.use('tinytest');
   api.addFiles('accounts_ui_tests.js', 'client');
 });
